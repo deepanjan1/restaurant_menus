@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create New Restaurant</title>
+</head>
+<body>
+	<h1>Create New Restaurant</h1>
+	{% with message = get_flashed_messages() %}
+		{% if message %}
+			<strong>{{ message }}</strong>
+		{% endif %}
+	{% endwith %}
+	<form method = 'post'>
+		<p>Restaurant Name:</p>
+			<input type='text' size='30' name='name' placeholder='Name of New Restaurant'>
+	<input type='submit' value='Add'>
+	<a href='/'>Cancel</a>
+	</form>
+</body>
+</html>

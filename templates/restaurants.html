@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Restaurants</title>
+</head>
+<body>
+	<h1>All Restaurants</h1>
+	<a href = '/restaurant/new'>Create New Restaurant</a>
+	<hr>
+	{% for restaurant in restaurants %}
+		<a href = '/restaurant/{{ restaurant.id }}/menu'>{{ restaurant.name }}</a>
+		<br>
+		<a href = '/restaurant/{{ restaurant.id }}/edit'>Edit</a>
+		<a href = '/restaurant/{{ restaurant.id }}/delete'>Delete</a>
+		<br><br>
+	{% endfor %}
+</body>
+</html>

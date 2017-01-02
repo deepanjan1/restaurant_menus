@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Menu Item</title>
+</head>
+<body>
+	<h1>Edit {{ menu.name }}</h1>
+	{% with message = get_flashed_messages() %}
+		{% if message %}
+			<strong>{{ message }}</strong>
+		{% endif %}
+	{% endwith %}
+	<form method = 'post'>
+		<p>Name:</p>
+			<input type='text' size='30' name='name' value="{{ menu.name }}">
+		<p>Description:</p>
+			<textarea rows="4" cols="50" name='description'>{{ menu.description }}</textarea>
+		<p>Price:</p>
+			<input type='number' step="any" size='30' name='price' value="{{ menu.price[1:] }}">
+		<p>Course:</p>
+			{% if menu.course == 'Appetizer' %}
+			<input type='radio' size='30' name='course' value='Appetizer' checked='checked'>Appetizer<br>
+			<input type='radio' size='30' name='course' value='Entree'>Entree<br>
+			<input type='radio' size='30' name='course' value='Dessert'>Dessert<br>
+			<input type='radio' size='30' name='course' value='Beverage'>Beverage<br>
+			{% elif menu.course == 'Entree' %}
+			<input type='radio' size='30' name='course' value='Appetizer'>Appetizer<br>
+			<input type='radio' size='30' name='course' value='Entree' checked='checked'>Entree<br>
+			<input type='radio' size='30' name='course' value='Dessert'>Dessert<br>
+			<input type='radio' size='30' name='course' value='Beverage'>Beverage<br>
+			{% elif menu.course == 'Dessert' %}
+			<input type='radio' size='30' name='course' value='Appetizer'>Appetizer<br>
+			<input type='radio' size='30' name='course' value='Entree'>Entree<br>
+			<input type='radio' size='30' name='course' value='Dessert' checked='checked'>Dessert<br>
+			<input type='radio' size='30' name='course' value='Beverage'>Beverage<br>
+			{% elif menu.course == 'Beverage' %}
+			<input type='radio' size='30' name='course' value='Appetizer'>Appetizer<br>
+			<input type='radio' size='30' name='course' value='Entree'>Entree<br>
+			<input type='radio' size='30' name='course' value='Dessert'>Dessert<br>
+			<input type='radio' size='30' name='course' value='Beverage' checked='checked'>Beverage<br>
+			{% endif %}
+	<input type='submit' value='Edit'>
+	<a href='/'>Cancel</a>
+	</form>
+</body>
+</html>
