@@ -2,19 +2,27 @@
 <html>
 <head>
 	<title>Edit {{ restaurant.name }}</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link type="text/css" rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
+	<div class="header">
 	<h1>Edit {{ restaurant.name }}</h1>
+	</div>
+	<div class="body_border">
 	{% with message = get_flashed_messages() %}
 		{% if message %}
 			<strong>{{ message }}</strong>
 		{% endif %}
 	{% endwith %}
 	<form method = 'post'>
-		<p>Name:</p>
-			<input type='text' size='30' name='name' placeholder='{{ restaurant.name }}'>
-	<input type='submit' value='Edit'>
-	<a href='/'>Cancel</a>
+		<p class="margin_left">Name:</p>
+			<input type='text' size='30' class="margin_left" name='name' placeholder='{{ restaurant.name }}'>
+	<input type='submit' class="button" value='Edit'>
+	<a class="button" href='/'>Cancel</a>
 	</form>
+	</div>
 </body>
 </html>

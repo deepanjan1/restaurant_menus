@@ -2,17 +2,26 @@
 <html>
 <head>
 	<title>All Restaurants</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link type="text/css" rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
-	<h1>All Restaurants</h1>
-	<a href = '/restaurant/new'>Create New Restaurant</a>
-	<hr>
+	<div class="header">
+		<h1>All Restaurants</h1>
+		<a class="modify margin_bottom" href = '/restaurant/new'>Create New Restaurant</a>
+	</div>
+	<div class="center_body body_border">
 	{% for restaurant in restaurants %}
-		<a href = '/restaurant/{{ restaurant.id }}/menu'>{{ restaurant.name }}</a>
-		<br>
-		<a href = '/restaurant/{{ restaurant.id }}/edit'>Edit</a>
-		<a href = '/restaurant/{{ restaurant.id }}/delete'>Delete</a>
-		<br><br>
+		<div class="row">
+			<a href = '/restaurant/{{ restaurant.id }}/menu'>{{ restaurant.name }}</a>
+			<br>
+			<a class="modify margin_right" href = '/restaurant/{{ restaurant.id }}/edit'>Edit</a>
+			<a class="modify" href = '/restaurant/{{ restaurant.id }}/delete'>Delete</a>
+			<br><br>
+		</div>
 	{% endfor %}
+	</div>
 </body>
 </html>
