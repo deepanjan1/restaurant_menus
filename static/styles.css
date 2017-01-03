@@ -1,6 +1,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
-	background-color: #FFFAFA; 
+	background-color: #ADD8E6;
+	/*background-color: #FFFAFA;*/ 
 	margin: 2em 20em auto 20em;
 }
 
@@ -16,6 +17,7 @@ h2 { font-size: 1.2em; }
 p { 
 	font-size: 1.2em;
 	color: #2F4F4F;
+	margin: 5px 10px 5px 10px;
 }
 
 a {
@@ -46,8 +48,32 @@ input {
 	padding-top: 0.5em;
 }
 
-.row {
-	height: 4em;
+.divider {
+	margin-right: 150px;
+	margin-left: 150px;
+}
+
+.item_name {
+	text-decoration: none;
+	font-weight: 100px;
+	color:#2F4F4F; 
+	font-size: 1em;
+}
+
+.description {
+	text-decoration: none;
+	font-weight: 100px;
+	color:#A9A9A9; 
+	font-size: .75em;
+	font-style: italic;
+	margin-top: 5px;
+}
+
+.item_price {
+	text-decoration: none;
+	font-weight: 100px;
+	color:#2F4F4F; 
+	font-size: 1em;	
 }
 
 .pane {position:absolute; 
@@ -91,8 +117,6 @@ input {
 .name {width:50%;
 	display: inline-block;
 	float: left;}
-
-.description {}
 
 .price {text-align: right;
  	width:50%; 

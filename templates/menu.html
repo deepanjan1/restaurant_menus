@@ -2,49 +2,56 @@
 <html>
 <head>
 	<title>{{ restaurant.name }}</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link type="text/css" rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
-	<h1>{{ restaurant.name }}'s Menu</h1>
-	<a href = '/restaurant/{{ restaurant.id }}/menu/new'>Create New Menu Item</a>
-	<hr>
-	<h2>Appetizers</h2><hr>
-	{% for item in menu_items_apps %}
-		<p class = "item_name">{{ item.name }}</p>
-		<p class = "description">{{ item.description }}</p>
-		<p class = "item_price">{{ item.price }}</p>
-		<a href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/edit'>Edit</a>
-		<a href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/delete'>Delete</a>
-		<br><br><br>
-	{% endfor %}
-	<br><br>
-	<h2>Entrees</h2><hr>
-	{% for item in menu_items_ent %}
-		<p class = "item_name">{{ item.name }}</p>
-		<p class = "description">{{ item.description }}</p>
-		<p class = "item_price">{{ item.price }}</p>
-		<a href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/edit'>Edit</a>
-		<a href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/delete'>Delete</a>
-		<br><br><br>
-	{% endfor %}
-	<br><br>
-	<h2>Dessert</h2><hr>
-	{% for item in menu_items_dess %}
-		<p class = "item_name">{{ item.name }}</p>
-		<p class = "description">{{ item.description }}</p>
-		<p class = "item_price">{{ item.price }}</p>
-		<a href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/edit'>Edit</a>
-		<a href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/delete'>Delete</a>
-		<br><br><br>
-	{% endfor %}
-	<br><br>
-	<h2>Beverage</h2><hr>
-	{% for item in menu_items_bev %}
-		<p class = "item_name">{{ item.name }}</p>
-		<p class = "description">{{ item.description }}</p>
-		<p class = "item_price">{{ item.price }}</p>
-		<a href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/edit'>Edit</a>
-		<a href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/delete'>Delete</a>
-		<br><br><br>
-	{% endfor %}
+	<div class="header">
+		<h1>{{ restaurant.name }}'s Menu</h1>
+		<a class="modify margin_bottom" href = '/restaurant/{{ restaurant.id }}/menu/new'>Create New Menu Item</a>
+	</div>
+	<div class="center_body body_border">
+		<h2>Appetizers</h2><hr class="divider">
+		{% for item in menu_items_apps %}
+			<p class = "item_name">{{ item.name }}</p>
+			<p class = "description">{{ item.description }}</p>
+			<p class = "item_price">{{ item.price }}</p>
+			<a class = "modify" href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/edit'>Edit</a>
+			<a class = "modify" href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/delete'>Delete</a>
+			<br><br><br>
+		{% endfor %}
+		<br>
+		<h2>Entrees</h2><hr class="divider">
+		{% for item in menu_items_ent %}
+			<p class = "item_name">{{ item.name }}</p>
+			<p class = "description">{{ item.description }}</p>
+			<p class = "item_price">{{ item.price }}</p>
+			<a class = "modify" href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/edit'>Edit</a>
+			<a class = "modify" href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/delete'>Delete</a>
+			<br><br><br>
+		{% endfor %}
+		<br>
+		<h2>Dessert</h2><hr class="divider">
+		{% for item in menu_items_dess %}
+			<p class = "item_name">{{ item.name }}</p>
+			<p class = "description">{{ item.description }}</p>
+			<p class = "item_price">{{ item.price }}</p>
+			<a class = "modify" href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/edit'>Edit</a>
+			<a class = "modify" href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/delete'>Delete</a>
+			<br><br><br>
+		{% endfor %}
+		<br>
+		<h2>Beverage</h2><hr class="divider">
+		{% for item in menu_items_bev %}
+			<p class = "item_name">{{ item.name }}</p>
+			<p class = "description">{{ item.description }}</p>
+			<p class = "item_price">{{ item.price }}</p>
+			<a class = "modify" href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/edit'>Edit</a>
+			<a class = "modify" href = '/restaurant/{{ restaurant.id }}/menu/{{ item.id }}/delete'>Delete</a>
+			<br><br><br>
+		{% endfor %}
+	</div>
 </body>
 </html>

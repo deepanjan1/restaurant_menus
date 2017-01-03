@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="header">
-	<h1>Edit {{ restaurant.name }}</h1>
+		<h1>Edit {{ restaurant.name }}</h1>
 	</div>
 	<div class="body_border">
 	{% with message = get_flashed_messages() %}
@@ -18,7 +18,7 @@
 		{% endif %}
 	{% endwith %}
 	<form method = 'post'>
-		<p class="margin_left">Name:</p>
+		<p>Name:</p>
 			<input type='text' size='30' class="margin_left" name='name' placeholder='{{ restaurant.name }}'>
 	<input type='submit' class="button" value='Edit'>
 	<a class="button" href='/'>Cancel</a>

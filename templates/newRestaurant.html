@@ -2,19 +2,27 @@
 <html>
 <head>
 	<title>Create New Restaurant</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link type="text/css" rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
-	<h1>Create New Restaurant</h1>
-	{% with message = get_flashed_messages() %}
-		{% if message %}
-			<strong>{{ message }}</strong>
-		{% endif %}
-	{% endwith %}
-	<form method = 'post'>
-		<p>Restaurant Name:</p>
-			<input type='text' size='30' name='name' placeholder='Name of New Restaurant'>
-	<input type='submit' value='Add'>
-	<a href='/'>Cancel</a>
-	</form>
+	<div class="header">
+		<h1>Create New Restaurant</h1>
+	</div>
+	<div class="body_border">
+			{% with message = get_flashed_messages() %}
+				{% if message %}
+					<strong>{{ message }}</strong>
+				{% endif %}
+			{% endwith %}
+		<form method = 'post'>
+			<p>Restaurant Name:</p>
+				<input type='text' size='30' class="margin_left" name='name' placeholder='Name of New Restaurant'>
+		<input class="button" type='submit' value='Add'>
+		<a class="button" href='/'>Cancel</a>
+		</form>
+	</div>
 </body>
 </html>

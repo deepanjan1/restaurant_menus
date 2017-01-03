@@ -2,12 +2,18 @@
 <html>
 <head>
 	<title>Delete {{ menu.name }}</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	<link type="text/css" rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
-	<h1>Delete {{ menu.name }}?</h1>
-	<form action="{{ url_for('deleteMenuItem', restaurant_id = menu.restaurant_id, menu_id = menu.id) }}" method = 'post'>
-		<input type='submit' value='Delete'>
-		<a href="{{ url_for('showMenu', restaurant_id = menu.restaurant_id) }}">Cancel</a>
-	</form>
+	<div class="header">
+		<h1>Delete {{ menu.name }}?</h1>
+		<form action="{{ url_for('deleteMenuItem', restaurant_id = menu.restaurant_id, menu_id = menu.id) }}" method = 'post'>
+			<input class = "button" type='submit' value='Delete'>
+			<a class = "button" href="{{ url_for('showMenu', restaurant_id = menu.restaurant_id) }}">Cancel</a>
+		</form>
+	</div>
 </body>
 </html>
